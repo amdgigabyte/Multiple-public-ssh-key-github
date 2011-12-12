@@ -21,7 +21,7 @@ Login in each github account and attach your keys respectively:
 
 Copy and paste into the public key field at github page
 
-git-hub doc
+see github documentation:
 http://help.github.com/mac-set-up-git/
 
 
@@ -61,7 +61,7 @@ Example
     $ git init
     $ git commit -m"firt commit"
 
-If you want to use your default ssh key( Github ),, you should write this:
+If you want to use your default ssh key (github), you should write this:
 
     $ git remote add origin git@github.com:Company/testing.git
 
