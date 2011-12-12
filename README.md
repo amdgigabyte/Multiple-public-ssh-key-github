@@ -4,23 +4,26 @@ MULTIPLE PUBLIC SSH KEY ON YOUR MAC OSX
 Create your ssh keys
 --------------------
 
-First you need to create your two ssh key
+First you need to create your two ssh key:
 
     $ ssh-keygen -t rsa -C "test1@test.com"
     $ ssh-keygen -t rsa -f ~/.ssh/id_rsa_OTHER_LABEL -C "test2@test.com"
 
-Note: You can use anyname for your public second key
+Note: You can use any name for your public second key
 
 
 Attach to github
 ----------------
 
-login in each github account and attach your keys respectively.
-What do you gonna attach ?
+Login in each github account and attach your keys respectively:
 
     $ vim ~/.ssh/id_rsa[YOUR_NAME].pub
 
-copy and paste into the public key field at github page
+Copy and paste into the public key field at github page
+
+git-hub doc
+http://help.github.com/mac-set-up-git/
+
 
 Create a ssh config file
 ------------------------
@@ -32,7 +35,7 @@ Create a config file
     $ touch ~/.ssh/config
     $ vim ~/.ssh/config
 
-example:
+Example:
 
     #Default GitHub
     Host github.com
@@ -45,7 +48,7 @@ example:
     User git
     IdentityFile ~/.ssh/id_rsa_OTHER_LABEL
 
-and save the changes.
+And save the changes.
 
 How does it works?
 ------------------
@@ -58,11 +61,11 @@ Example
     $ git init
     $ git commit -m"firt commit"
 
-now if you use your default one ( Github )
+If you want to use your default ssh key( Github ),, you should write this:
 
     $ git remote add origin git@github.com:Company/testing.git
 
-instead it, you want to use the other user just change the HOST name
+Otherwise, if you want to use the other ssh key write something like this:
 
     $ git remote add origin git@github-COMPANY:Company/testing.git
 
